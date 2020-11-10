@@ -93,11 +93,11 @@ class Game {
     }
 
     if(player.distance === 3860){
-      
+      gameState = 2;
       player.rank +=1
       Player.updateCarsAtEnd(player.rank)
       console.log(player.rank);
-      gameState = 2;
+      
     }
    
     drawSprites();
@@ -118,18 +118,5 @@ class Game {
         text( "Your Rank is : " + player.rank, displayWidth/2-70, cars[player.index-1].y-300 );
     
   }
-  displayLeaderBoard(){
-    var display_position= cars[player.index-1].y-300;
-    rectMode(CENTER);
-    rect(displayWidth/2,cars[player.index-1].y-200, 500,600);
-    textSize(50);
-    fill("blue")
-    text("LEADERBOARD", displayWidth/2-100, display_position-100 )
-    for(var plr in allPlayers){
-      display_position +=50;
-      textSize(30);
-      fill("white");
-      text(allPlayers[plr].name + ": "+allPlayers[plr].rank, displayWidth/2-70, display_position);
-    }
-  }
+ 
 }
